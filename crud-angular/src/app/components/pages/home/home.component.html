@@ -1,0 +1,42 @@
+<table class="table text-center mt-3">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Qtde. de cartões</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios$ | async">
+      <th scope="row">{{ usuario.id }}</th>
+      <td>{{ usuario.nome }}</td>
+      <td>{{ usuario.email }}</td>
+      <td *ngIf="usuario.cartoes != null">{{ usuario.cartoes.length }}</td>
+      <td>
+        <span>
+          <a
+            role="button"
+            class="btn btn-primary"
+            routerLink="{{ usuario.id }}/meusCartoes"
+            >Meus Cartões</a
+          >
+        </span>
+        <span>
+          <a
+            role="button"
+            class="btn btn-primary ms-1"
+            routerLink="{{ usuario.id }}/adicionarCartao"
+            >Adicionar Cartao</a
+          >
+        </span>
+        <span>
+          <button class="btn btn-danger ms-1" (click)="deletar(usuario.id!)">
+            Deletar Usuario
+          </button>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

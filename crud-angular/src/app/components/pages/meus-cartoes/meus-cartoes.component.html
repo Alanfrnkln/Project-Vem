@@ -1,0 +1,113 @@
+<ul class="d-flex">
+  <li *ngFor="let cartao of cartoes$ | async">
+    <div class="card m-2" style="width: 15rem">
+      <img
+        class="img-cartao"
+        *ngIf="cartao.tipoCartao == 'TRABALHADOR'"
+        src="../../../../assets/vem_trabalhador_frente.jpg"
+        alt="Imagem Vem Trabalhador"
+      />
+      <img
+        class="img-cartao"
+        *ngIf="cartao.tipoCartao == 'ESTUDANTIL'"
+        src="../../../../assets/vem_estudante_frente.jpg"
+        alt="Imagem Vem Estudante"
+      />
+      <img
+        class="img-cartao"
+        *ngIf="cartao.tipoCartao == 'COMUM'"
+        src="../../../../assets/vem_comum_frente.jpg"
+        alt="Imagem Vem Comum"
+      />
+      <div class="card-body" *ngIf="cartao.tipoCartao == 'TRABALHADOR'">
+        <h5 class="card-title text-center">Vem Trabalhador</h5>
+        <p class="card-text">
+          Propietário: {{ user.nome }} <br />
+          Número do cartão: {{ cartao.numeroCartao }} <br />
+          <ng-container *ngIf="cartao.status == true; else elseTemplate">
+            <p>Status: Ativo</p>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <p>Status: Bloqueado</p>
+          </ng-template>
+        </p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onClick(cartao.numeroCartao!)"
+          >
+            Mudar Status
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deletar(cartao.numeroCartao!)"
+          >
+            Excluir
+          </button>
+        </div>
+      </div>
+
+      <div class="card-body" *ngIf="cartao.tipoCartao == 'COMUM'">
+        <h5 class="card-title text-center">Vem Comum</h5>
+        <p class="card-text">
+          Propietário: {{ user.nome }} <br />
+          Número do cartão: {{ cartao.numeroCartao }} <br />
+          <ng-container *ngIf="cartao.status == true; else elseTemplate">
+            <p>Status: Ativo</p>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <p>Status: Bloqueado</p>
+          </ng-template>
+        </p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onClick(cartao.numeroCartao!)"
+          >
+            Mudar Status
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deletar(cartao.numeroCartao!)"
+          >
+            Excluir
+          </button>
+        </div>
+      </div>
+
+      <div class="card-body" *ngIf="cartao.tipoCartao == 'ESTUDANTIL'">
+        <h5 class="card-title text-center">Vem Estudante</h5>
+        <p class="card-text">
+          Propietário: {{ user.nome }} <br />
+          Número do cartão: {{ cartao.numeroCartao }} <br />
+          <ng-container *ngIf="cartao.status == true; else elseTemplate">
+            <p>Status: Ativo</p>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <p>Status: Bloqueado</p>
+          </ng-template>
+        </p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onClick(cartao.numeroCartao!)"
+          >
+            Mudar Status
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deletar(cartao.numeroCartao!)"
+          >
+            Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,18 @@
+img {
+  margin: 0;
+}
+form {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(221, 219, 219, 0.096);
+  border: 1px solid rgb(214, 212, 212);
+}
+
+form div {
+  padding: 10px;
+}
+
+form input {
+  border: 1px solid rgb(214, 212, 212);
+}

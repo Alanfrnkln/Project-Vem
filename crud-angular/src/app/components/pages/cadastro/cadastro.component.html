@@ -1,0 +1,42 @@
+<form
+  class="col-8 mx-auto text-center p-3 d-flex justify-content-center align-items-center"
+>
+  <div class="container d-flex justify-content-center">
+    <img src="../../../../assets/logovem.png" alt="logovem" class="" />
+  </div>
+  <input type="hidden" name="id" />
+  <div class="col-6">
+    <label for="nome" class="">Nome Completo</label>
+    <input type="text" class="form-control" name="nome" [(ngModel)]="nome" />
+  </div>
+  <div class="col-6">
+    <label for="email" class="">Email</label>
+    <input type="email" class="form-control" name="email" [(ngModel)]="email" />
+  </div>
+
+  <div class="col-6">
+    <label for="senha" class="">Senha</label>
+    <input
+      type="password"
+      class="form-control"
+      name="senha"
+      [(ngModel)]="senha"
+    />
+  </div>
+  <div class="col-6">
+    <label for="Confirmar senha" class="">Confirmar senha</label>
+    <input
+      type="password"
+      class="form-control"
+      name="senha"
+      [(ngModel)]="confirmarSenha"
+    />
+  </div>
+
+  <input
+    type="submit"
+    value="Cadastrar-se"
+    class="btn btn-primary p-2"
+    (click)="cadastrarNovoUsuario()"
+  />
+</form>

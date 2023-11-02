@@ -1,0 +1,52 @@
+<div class="container mt-1 mx-auto p-5 col-6">
+  <div class="card">
+    <img
+      src="../../../assets/logovem.png"
+      style="width: 250px; height: 150px"
+      class="card-img-top mx-auto"
+      alt="..."
+    />
+    <div class="card-body">
+      <form class="d-flex flex-column">
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Email*"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            class="form-control rounded-pill"
+            id="exampleInputPassword1"
+            placeholder="Senha*"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-md rounded-4 w-25 mx-auto p-2"
+        >
+          Entrar
+        </button>
+      </form>
+      <div class="container d-flex flex-column text-center mt-2">
+        <a routerLink="esqueciSenha" class="text-decoration-none"
+          >Esqueci minha senha</a
+        >
+        <a routerLink="alterarEmail" class="text-decoration-none"
+          >Alterar meu e-mail</a
+        >
+        <a routerLink="/cadastro" class="text-decoration-none">Cadastre-se</a>
+      </div>
+    </div>
+  </div>
+</div>
